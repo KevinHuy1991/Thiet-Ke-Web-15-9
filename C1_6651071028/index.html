@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trang giới thiệu cá nhân của sinh viên">
+  <meta name="author" content="HỌ VÀ TÊN SINH VIÊN">
+  <meta name="keywords" content="sinh viên, CNTT, giới thiệu">
+  <title>Giới thiệu bản thân – [Họ tên]</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Main Container */
+    .profile-card {
+      width: 100%;
+      max-width: 860px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Header Banner */
+    header {
+      background: linear-gradient(135deg, #0d7f9c 0%, #17a2b8 50%, #f6c065 100%);
+      padding: 35px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    header hgroup h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+
+    header hgroup h2 {
+      font-size: 15px;
+      font-weight: 400;
+      opacity: 0.95;
+      letter-spacing: 0.3px;
+    }
+
+    .avatar-wrapper {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+      background: #e0f2fe;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Navigation */
+    nav {
+      background: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 7px 18px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #0e7490;
+      color: #ffffff;
+      border-color: #0e7490;
+      transform: translateY(-1px);
+    }
+
+    /* Main Content: 3 Columns */
+    main {
+      padding: 30px 40px 40px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.1fr 1fr;
+      gap: 25px;
+    }
+
+    section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 22px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    section h2 {
+      font-size: 18px;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #38bdf8;
+    }
+
+    /* Section 1: Giới thiệu */
+    #gioithieu p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #475569;
+      margin-bottom: 12px;
+      text-align: justify;
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border-left: 3px solid #0284c7;
+    }
+
+    /* Section 2: Kỹ năng */
+    #kynang ul {
+      list-style: none;
+    }
+
+    #kynang ul li {
+      font-size: 13.5px;
+      color: #334155;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    #kynang ul li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: #0284c7;
+      color: white;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Section 3: Liên hệ */
+    #lienhe address {
+      font-style: normal;
+      font-size: 13.5px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .contact-item .icon {
+      color: #0284c7;
+      font-size: 16px;
+    }
+
+    .contact-item a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #e2e8f0;
+      padding: 16px 40px;
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+      border-top: 1px solid #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0284c7;
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <header>
+      <hgroup>
+        <h1>HỌ VÀ TÊN SINH VIÊN</h1>
+        <h2>Sinh viên CNTT - Lớp: CNTT-01</h2>
+      </hgroup>
+      <div class="avatar-wrapper">
+        <img src="avatar.png" alt="Ảnh đại diện sinh viên">
+      </div>
+    </header>
+
+    <nav>
+      <a href="#gioithieu">GIỚI THIỆU</a>
+      <a href="#kynang">KỸ NĂNG</a>
+      <a href="#lienhe">LIÊN HỆ</a>
+    </nav>
+
+    <main>
+      <section id="gioithieu">
+        <h2>Giới thiệu</h2>
+        <p>Em là sinh viên năm 2 ngành Công nghệ Thông tin, hiện có niềm đam mê sâu sắc với phát triển web, tìm tòi công nghệ mới và xây dựng các giải pháp số thực tế.</p>
+        <p>Mục tiêu của em là rèn luyện tư duy lập trình vững chắc, thành thạo kỹ năng thiết kế giao diện frontend và phát triển các sản phẩm công nghệ có ích cho cộng đồng.</p>
+      </section>
+
+      <section id="kynang">
+        <h2>Kỹ năng</h2>
+        <ul>
+          <li>Thiết kế Web (HTML5, CSS3, JS)</li>
+          <li>Lập trình Backend cơ bản</li>
+          <li>Sử dụng Git &amp; GitHub</li>
+          <li>Thiết kế Responsive</li>
+        </ul>
+      </section>
+
+      <section id="lienhe">
+        <h2>Liên hệ</h2>
+        <address>
+          <div class="contact-item">
+            <span class="icon">📍</span>
+            <span>Address: Hà Nội, Việt Nam</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">✉️</span>
+            <a href="mailto:email@sv.edu.vn">email@sv.edu.vn</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📞</span>
+            <a href="tel:0901234567">0901-234-567</a>
+          </div>
+        </address>
+      </section>
+    </main>
+
+    <footer>
+      © 2024 – [HỌ TÊN SINH VIÊN]. All rights reserved.
+      <div class="footer-badge">
+        <span>🎓 Học Viện Công Nghệ</span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
